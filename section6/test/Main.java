@@ -7,7 +7,29 @@ import java.util.List;
 public class Main {
 ///  kiểu collection được override equals, toString
     public static void main(String[] args) {
-        tets2();
+        test6();
+    }
+
+    public static void test8() {
+        Integer[] arr1 = {1000, 100};
+        Integer[] arr2 = {1000, 100};
+
+        System.out.println(arr1 == arr2); /// false : so sánh 2 tham chiếu bộ nhớ (tham chiếu đối tượng) khác nhau
+        System.out.println(arr1.equals(arr2)); /// false : không dc override nên equals với == giống nhau
+
+        System.out.println(arr1[0] == arr2[0]); ///  false : ngoài phạm vi cache Integer
+        System.out.println(arr1[0].equals(arr2[0])); /// true : so sánh giá trị trực tiếp
+    }
+
+    public static void test7() {
+        String[] arr1 = {"hello world", "abc"};
+        String[] arr2 = {"hello world", "abc"};
+
+        System.out.println(arr1 == arr2); /// false : so sánh 2 tham chiếu bộ nhớ (tham chiếu đối tượng) khác nhau
+        System.out.println(arr1.equals(arr2)); /// false : không dc override nên equals với == giống nhau
+
+        System.out.println(arr1[0] == arr2[0]); ///  true : String pool
+        System.out.println(arr1[0].equals(arr2[0])); /// true : so sánh giá trị trực tiếp
     }
 
     public static void test6() {
@@ -18,6 +40,11 @@ public class Main {
         List<String> list2 = new ArrayList<>();
         list2.add("hello world");
         list2.add(new String("xin chao"));
+
+        System.out.println(list1.get(1) == list2.get(1)); /// false : 1 cái nằm trong
+        ///  String pool, 1 cái object mới
+
+        System.out.println(list1.get(1).equals(list2.get(1))); /// true: so sánh giá trị trực tiếp
 
         System.out.println(list1.equals(list2)); ///  true : so sánh equals từng index
     }
