@@ -15,9 +15,14 @@ public class Main {
         chimUng.ngu();
         System.out.println(chimUng.getDoiCanh());
 
-//        List<Animal> animals = new ArrayList<>();
-//        animals.add(tiger);
-//        animals.add(chimUng);
+        List<Animal> animals = new ArrayList<>(); /// thể hiện tính đa hình (abstraction)
+        animals.add(tiger); /// List lưu danh sách animals với mỗi
+        animals.add(chimUng); /// index lại được new những động vật khác nhau
+        System.out.println("=======");
+        for(Animal animal : animals) { /// vòng lặp for đa hình thể hiện mỗi động vật
+            System.out.println(animal.name); /// thực hiện cho những thuộc tính riêng cũng như phương thức riêng của nó
+        }
+        System.out.println("=======");
 
         ///  do có nhiều đối tượng như Chim ưng và Máy bay đêu có thể bay nên tạo ra interface
         ///  rõ ràng Chim ưng và Máy bay có thể bay nhưng không thể extends đối tượng Cha nào cả
