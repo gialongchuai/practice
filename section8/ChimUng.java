@@ -19,7 +19,7 @@ public class ChimUng extends Animal implements IFly {
     public String getDoiCanh() {
         return doiCanh;
     }
-
+    
     public void setDoiCanh(String doiCanh) {
         this.doiCanh = doiCanh;
     }
