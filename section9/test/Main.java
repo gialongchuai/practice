@@ -7,9 +7,9 @@ public class Main {
     public static void main(String[] args) {
         Animal cat1 = new Cat();
         Animal cat2 = new Cat();
-        HashSet<Animal> treeSet = new TreeSet<>(); /// error ko lỗi nếu dùng hashset và linkedhashset
-        treeSet.add(cat1);
-        treeSet.add(cat2);
+        /// HashSet<Animal> treeSet = new TreeSet<>(); /// error ko lỗi nếu dùng hashset và linkedhashset
+        /// treeSet.add(cat1);
+        /// treeSet.add(cat2);
         /// chỉ có TreeSet và TreeMap là
         /// Cần Comparable hoặc Comparator để biết so sánh gì mà sắp xếp
 
@@ -32,5 +32,9 @@ public class Main {
         /// cat1 cat2 cùng trỏ cùng 1 đối tượng
         ///  đối tượng cat1 trỏ ban đầu không dùng nữa -> Garage Collector thua gom đối tượng
         /// không dùng đến
+        Product p = new Product();
+    }
+    public static class Product {
+
     }
 }
